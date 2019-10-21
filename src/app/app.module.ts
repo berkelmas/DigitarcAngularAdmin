@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // NGRX
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // REDUCERS
 import { rootReducer } from './store/reducers/index.reducer';
@@ -29,7 +30,10 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
 
     StoreModule.forRoot(rootReducer),
-    EffectsModule.forRoot([AppEffects, UserEffects])
+    EffectsModule.forRoot([AppEffects, UserEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 20
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

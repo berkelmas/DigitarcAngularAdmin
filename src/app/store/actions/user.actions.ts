@@ -1,17 +1,16 @@
-import { START_USERNAME_CHANGE, USERNAME_CHANGE } from '../types/user.types';
+import { START_LOGIN, SUCCESS_LOGIN, FAILED_LOGIN, START_LOGIN_LOADING } from '../types/user.types';
 
 
-export const changeUsernameAction = (username : string) => ({
-    type : USERNAME_CHANGE,
+export const startLoginAction = () => ({
+    type : START_LOGIN
+});
+
+export const successLoginAction = (username : string, token : string, expirationDate : Date) => ({
+    type : SUCCESS_LOGIN,
     payload : {
-        username : username
+        username,
+        token, 
+        expirationDate
     }
-})
-
-
-export const startChangeUsernameAction = () => ({
-    type : START_USERNAME_CHANGE
-})
-
-
+});
 
