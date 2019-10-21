@@ -1,9 +1,11 @@
 
 <mat-sidenav-container class="dashboard-container">
-  <mat-sidenav class="custom-mat-sidenav" mode="side" opened>
+  <mat-sidenav class="custom-mat-sidenav shadow" mode="side" opened>
     
     <!-- HERE COMES THE LOGO OF THE COMPANY AND SOME LOGGED IN USER INFORMATION. -->
-
+    <div class="sidenav-header">
+      <img class="sidenav-header-logo pl-3" src="assets/images/admin-panel-logo.png" alt="">
+    </div>
 
     <!-- HERE IS ALL THE SIDENAV CONTENT -->
     <mat-list>
@@ -20,9 +22,9 @@
   <mat-sidenav-content>
 
     <!-- HERE IS THE HEADER COMPONENT -->
-    <div clas="header">
-        <p>Header Component</p>
-        <button (click)="matSidenav.toggle()">Toggle Sidenav</button>
+    <div class="header">
+        <button class="custom-button" (click)="matSidenav.toggle()"> <i [class.icon-rotated-180]="matSidenav.opened" [class.icon-rotated-0]="!matSidenav.opened" class="fal fa-chevron-left fa-lg"></i> </button>
+        <h1 class="header-logo lead ml-2 mb-0">Digital Architects</h1>
     </div>
     
     <!-- HERE IS ALL THE APP ROUTES... -->

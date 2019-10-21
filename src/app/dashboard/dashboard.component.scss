@@ -5,10 +5,11 @@
 
 .custom-mat-sidenav {
     min-width: 20%;
+    border: none;
 }
 
 
-a {
+mat-list a {
     text-decoration: none;
     transition : all .2s;
 
@@ -19,4 +20,46 @@ a {
 
 span.menu-list-item {
     padding-left : .8rem;
+}
+
+// HEADER COMPONENT
+.header {
+    background-image : linear-gradient(to right bottom, #1e88e5, #2196f3);
+    display : flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-height : 50px;
+    &-logo {
+        color : white;
+    }
+
+}
+
+.sidenav-header {
+    background-image : linear-gradient(to right bottom, #2196f3, #1e88e5);
+    min-height: 50px;
+}
+
+.sidenav-header-logo {
+    height: 50px;
+}
+
+
+.custom-button {
+    cursor : pointer; 
+    background-color: transparent; 
+    border : none; 
+    outline : none; 
+    color : white;
+}
+
+.icon-rotated-180 {
+    transform : rotate(180deg);
+    transition : all .5s;
+}
+
+.icon-rotated-0 {
+    transform : rotate(0);
+    transition : all .5s;
 }

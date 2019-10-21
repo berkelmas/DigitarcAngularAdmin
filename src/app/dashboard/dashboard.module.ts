@@ -12,9 +12,10 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
 // ANGULAR MATERIAL
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 // NGRX (FEATURE)
 import { StoreModule } from '@ngrx/store';
@@ -30,6 +31,7 @@ import { DashboardReducer } from './store/reducers/index.reducer';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatButtonModule,
 
     DashboardRoutingModule,
 
