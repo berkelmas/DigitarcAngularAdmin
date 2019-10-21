@@ -1,0 +1,20 @@
+
+<mat-sidenav-container class="dashboard-container">
+  <mat-sidenav mode="side" [opened]="sidenavState">
+      
+    <!-- HERE IS ALL THE SIDENAV CONTENT -->
+    Menu Item 1
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <!-- HERE IS THE HEADER COMPONENT -->
+    <app-header></app-header>
+    <!-- HERE IS ALL THE APP ROUTES... -->
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
