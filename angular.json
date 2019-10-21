@@ -29,7 +29,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/custom-material-theme.scss",
               "src/assets/fontawesome/css/all.css",
               "src/styles.scss"
             ],

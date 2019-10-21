@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+$my-blue: (
+  50: #7fdddd,
+  100: #7faedd,
+  200: #7f7fdd,
+  300: #7faedd,
+  400: #e3f2fd,
+  500: #bbdefb,
+  600: #90caf9,
+  700: #64b5f6,
+  800: #42a5f5,
+  900: #2196f3,
+  A100: #1e88e5,
+  A200: #1976d2,
+  A400: #1565c0,
+  A700: #0d47a1,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+@include mat-core();
+$custom-theme-primary: mat-palette($my-blue, A100);
+$custom-theme-accent:mat-palette($mat-pink, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);

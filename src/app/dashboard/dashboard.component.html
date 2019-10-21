@@ -9,13 +9,14 @@
 
     <!-- HERE IS ALL THE SIDENAV CONTENT -->
     <mat-list>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
-      <a mat-list-item style="cursor: pointer;" (click)="secondItemState = !secondItemState"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> <mat-icon class="ml-auto">expand_more</mat-icon> </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-home fa-lg"></i> <span class="menu-list-item">Home</span> </a>
+      <a mat-list-item style="cursor: pointer;" (click)="secondItemState = !secondItemState"> <i class="fal fa-chart-line fa-lg"></i> <span class="menu-list-item"> Charts </span> <i [class.icon-rotated-180]="secondItemState" [class.icon-rotated-0]="!secondItemState" class="fal fa-chevron-down fa-lg ml-auto"></i> </a>
+        <a @toggleSubmenu *ngIf="secondItemState" class="ml-3" mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-chart-pie fa-lg"></i> <span class="menu-list-item"> Pie </span> </a>
       
-      <a @toggleSubmenu *ngIf="secondItemState" class="ml-3" mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>    
+      
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-database fa-lg"></i> <span class="menu-list-item"> Data </span> </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-link fa-lg"></i> <span class="menu-list-item"> Firm </span> </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-cogs fa-lg"></i> <span class="menu-list-item"> Settings </span> </a>    
     </mat-list>
 
   </mat-sidenav>
@@ -28,7 +29,9 @@
     </div>
     
     <!-- HERE IS ALL THE APP ROUTES... -->
-    <router-outlet></router-outlet>
+    <div class="m-3 p-3">
+      <router-outlet></router-outlet>
+    </div>
 
   </mat-sidenav-content>
 
