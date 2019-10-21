@@ -2,3 +2,21 @@
 .dashboard-container {
     min-height: 100vh;
 }
+
+.custom-mat-sidenav {
+    min-width: 20%;
+}
+
+
+a {
+    text-decoration: none;
+    transition : all .2s;
+
+    &:hover {
+        background-color : darken(white, 10%);
+    }
+}
+
+span.menu-list-item {
+    padding-left : .8rem;
+}

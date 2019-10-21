@@ -1,15 +1,30 @@
 
 <mat-sidenav-container class="dashboard-container">
-  <mat-sidenav mode="side" [opened]="sidenavState">
-      
+  <mat-sidenav class="custom-mat-sidenav" mode="side" opened>
+    
+    <!-- HERE COMES THE LOGO OF THE COMPANY AND SOME LOGGED IN USER INFORMATION. -->
+
+
     <!-- HERE IS ALL THE SIDENAV CONTENT -->
-    Menu Item 1
+    <mat-list>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
+      <a mat-list-item style="cursor: pointer;" (click)="secondItemState = !secondItemState"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> <mat-icon class="ml-auto">expand_more</mat-icon> </a>
+      
+      <a @toggleSubmenu *ngIf="secondItemState" class="ml-3" mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']"> <mat-icon>home</mat-icon> <span class="menu-list-item">Home</span> </a>    
+    </mat-list>
 
   </mat-sidenav>
   <mat-sidenav-content>
 
     <!-- HERE IS THE HEADER COMPONENT -->
-    <app-header></app-header>
+    <div clas="header">
+        <p>Header Component</p>
+        <button (click)="matSidenav.toggle()">Toggle Sidenav</button>
+    </div>
+    
     <!-- HERE IS ALL THE APP ROUTES... -->
     <router-outlet></router-outlet>
 

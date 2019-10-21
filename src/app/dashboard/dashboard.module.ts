@@ -11,7 +11,10 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 // CORE COMPONENT
 import { DashboardComponent } from './dashboard.component';
 
+// ANGULAR MATERIAL
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 // NGRX (FEATURE)
 import { StoreModule } from '@ngrx/store';
@@ -22,8 +25,11 @@ import { DashboardReducer } from './store/reducers/index.reducer';
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    SharedModule,
+
+    // ANGULAR MATERIAL
     MatSidenavModule,
+    MatListModule,
+    MatIconModule,
 
     DashboardRoutingModule,
 
