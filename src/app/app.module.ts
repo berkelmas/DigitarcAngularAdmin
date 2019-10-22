@@ -15,9 +15,19 @@ import { rootReducer } from './store/reducers/index.reducer';
 import { AppEffects } from './store/effects/app.effects';
 import { UserEffects } from './store/effects/user/user.effects';
 
+// NGRX STATES
+import { UserState } from './store/reducers/user/user.reducer';
+import { DashboardState } from './dashboard/store/reducers/index.reducer';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+// GLOBAL NGRX STATE
+export interface GlobalState {
+  user : UserState,
+  dashboard : DashboardState
+};
 
 @NgModule({
   declarations: [

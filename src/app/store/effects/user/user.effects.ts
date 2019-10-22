@@ -9,11 +9,11 @@ import { successLoginAction } from '../../actions/user.actions';
 
 // RXJS
 import { Observable, of } from 'rxjs';
-import { mergeMap, map, delay, concatMap, tap } from 'rxjs/operators';
+import { mergeMap, map, delay, concatMap, tap, take } from 'rxjs/operators';
 
 // TYPES
-import { START_LOGIN, SUCCESS_LOGIN, FAILED_LOGIN, START_LOGIN_LOADING } from '../../types/user.types';
-import { UserState } from '../../reducers/user/user.reducer';
+import { START_LOGIN } from '../../types/user.types';
+import { GlobalState } from 'src/app/app.module';
 
 @Injectable()
 export class UserEffects {
@@ -34,6 +34,6 @@ export class UserEffects {
 
     constructor(
         private actions$: Actions,
-        private store : Store<UserState>
+        private store : Store<GlobalState>
     ) {  }
 }
