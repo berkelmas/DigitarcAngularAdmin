@@ -1,27 +1,3 @@
-// Minimum height for the dashboard.
-.dashboard-container {
-    min-height: 100vh;
-}
-
-.custom-mat-sidenav {
-    min-width: 20%;
-    border: none;
-}
-
-
-mat-list a {
-    text-decoration: none;
-    transition : all .2s;
-
-    &:hover {
-        background-color : darken(white, 10%);
-    }
-}
-
-span.menu-list-item {
-    padding-left : .8rem;
-}
-
 // HEADER COMPONENT
 .header {
     background-image : linear-gradient(to right bottom, #1e88e5, #2196f3);

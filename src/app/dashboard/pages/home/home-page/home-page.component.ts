@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/reducers/index.reducer';
-import { startLoginAction } from 'src/app/store/actions/user.actions';
 
 @Component({
   selector: 'app-home-page',
@@ -10,16 +7,7 @@ import { startLoginAction } from 'src/app/store/actions/user.actions';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(
-    private store : Store<AppState>
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.store.subscribe(console.log);
-  }
-
-  handleLogin() {
-    this.store.dispatch(startLoginAction())
-  }
-
+  ngOnInit() {  }
 }

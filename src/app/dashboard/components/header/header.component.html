@@ -1,0 +1,16 @@
+<!-- HERE IS THE HEADER COMPONENT -->
+<div class="header">
+
+  <div class="header-left-side d-flex">
+    <button class="custom-button" (click)="handleToggle()"> <i [class.icon-rotated-180]="!sidenavState"
+        [class.icon-rotated-0]="sidenavState" class="fal fa-chevron-left fa-lg"></i> </button>
+    <h1 class="header-logo lead ml-2 mb-0">Digital Architects</h1>
+  </div>
+  <div class="header-right-side" style="height : 50px;">
+    <button style="color : white; height : 100%;" mat-button [matMenuTriggerFor]="menu">Username</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Log Out</button>
+    </mat-menu>
+  </div>
+
+</div>

@@ -22,11 +22,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
 
-    <!-- HERE IS THE HEADER COMPONENT -->
-    <div class="header">
-        <button class="custom-button" (click)="matSidenav.toggle()"> <i [class.icon-rotated-180]="matSidenav.opened" [class.icon-rotated-0]="!matSidenav.opened" class="fal fa-chevron-left fa-lg"></i> </button>
-        <h1 class="header-logo lead ml-2 mb-0">Digital Architects</h1>
-    </div>
+    <app-header (clicked)="matSidenav.toggle()" [sidenavState]="matSidenav.opened"></app-header>
     
     <!-- HERE IS ALL THE APP ROUTES... -->
     <div class="m-3 p-3">

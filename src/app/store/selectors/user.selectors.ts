@@ -7,8 +7,14 @@ export const selectUser = createFeatureSelector<UserState>(
     'user'
 );
 
+// LOADING VARIABLE SELECTOR IN USER REDUCER.
+export const selectloginLoading = createSelector(
+    selectUser,
+    state => state.loginLoading
+)
+
 // LOGGEDIN VARIABLE SELECTOR IN USER REDUCER.
-export const userLoggedInSelector = createSelector(
+export const selectUserLoggedIn = createSelector(
     selectUser,
     state => state.loggedIn
 );
