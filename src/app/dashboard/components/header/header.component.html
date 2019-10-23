@@ -7,7 +7,7 @@
     <h1 class="header-logo lead ml-2 mb-0">Digital Architects</h1>
   </div>
   <div class="header-right-side" style="height : 50px;">
-    <button style="color : white; height : 100%;" mat-button [matMenuTriggerFor]="menu">Username</button>
+    <button style="color : white; height : 100%;" mat-button [matMenuTriggerFor]="menu"> {{ username$ | async }} </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Log Out</button>
     </mat-menu>

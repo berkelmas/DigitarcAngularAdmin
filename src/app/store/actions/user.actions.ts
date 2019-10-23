@@ -1,23 +1,37 @@
 import { START_LOGIN, SUCCESS_LOGIN, FAILED_LOGIN, START_LOGIN_LOADING } from '../types/user.types';
+import { Action } from '@ngrx/store';
 
+export class StartLoginAction implements Action {
+    readonly type: string = START_LOGIN;
 
-export const startLoginAction = (username : string, password : string) => ({
-    type : START_LOGIN,
-    payload : {
-        username, 
-        password
+    constructor(
+        public payload : {
+            username : string;
+            password : string;
+        }
+    ) {  }
+};
+
+export class SuccessLoginAction implements Action {
+    readonly type: string = SUCCESS_LOGIN;
+
+    constructor(
+        public payload : {
+            username : string;
+            token : string;
+            expirationDate : Date;
+        }
+    ) { }
+};
+
+export class FailedLoginAction implements Action {
+    readonly type : string = FAILED_LOGIN;
+
+    constructor(
+        public payload : string = null
+    ) {
+
     }
-});
+};
 
-export const successLoginAction = (username : string, token : string, expirationDate : Date) => ({
-    type : SUCCESS_LOGIN,
-    payload : {
-        username,
-        token, 
-        expirationDate
-    }
-});
-
-export const failedLoginAction = () => ({
-    type : FAILED_LOGIN
-})
+export type UserActionTypes = SuccessLoginAction | FailedLoginAction | StartLoginAction;

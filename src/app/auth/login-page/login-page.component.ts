@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { GlobalState } from '../../app.module';
 
 // ACTIONS
-import { startLoginAction } from 'src/app/store/actions/user.actions';
+import { StartLoginAction } from 'src/app/store/actions/user.actions';
 import { selectloginLoading } from 'src/app/store/selectors/user.selectors';
 import { Observable, Subscription } from 'rxjs';
 
@@ -51,7 +51,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   handleSubmit() {
     if (this.loginForm.valid) {
-      this.store.dispatch(startLoginAction(this.username.value, this.password.value));
+      this.store.dispatch(new StartLoginAction({username : this.username.value, password : this.password.value}));
 
       // RESET FORM.
       this.loginForm.reset();

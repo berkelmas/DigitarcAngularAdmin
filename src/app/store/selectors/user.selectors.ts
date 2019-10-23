@@ -18,3 +18,9 @@ export const selectUserLoggedIn = createSelector(
     selectUser,
     state => state.loggedIn
 );
+
+// USEERNAME VARIABLE SELECTOR IN USER REDUCER.
+export const selectUserUsername = createSelector(
+    selectUser,
+    state => state.username
+);

@@ -5,6 +5,8 @@ import {
   START_LOGIN_LOADING
 } from '../../types/user.types';
 
+import { UserActionTypes, SuccessLoginAction } from '../../actions/user.actions';
+
 const initialState : UserState = {
     loggedIn : false,
     token : null,
@@ -23,7 +25,7 @@ export interface UserState {
     loginLoading : boolean;
 };
 
-export const UserReducer = (state = initialState, action ) => {
+export const UserReducer = (state = initialState, action : UserActionTypes ) => {
 
     switch(action.type) {
         case START_LOGIN:
@@ -32,9 +34,9 @@ export const UserReducer = (state = initialState, action ) => {
             return {
               ...state,
               loggedIn: true,
-              token: action.payload.token,
-              username: action.payload.username,
-              expirationDate: action.payload.expirationDate,
+              token: (<SuccessLoginAction>action).payload.token,
+              username: (<SuccessLoginAction>action).payload.username,
+              expirationDate: (<SuccessLoginAction>action).payload.expirationDate,
               loginLoading: false
             };
         case FAILED_LOGIN:

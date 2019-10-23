@@ -25,8 +25,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  getClick() {
-    console.log('clicked .... ')
-  }
-
 }
