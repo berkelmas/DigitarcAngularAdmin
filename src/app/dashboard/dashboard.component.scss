@@ -1,65 +1,65 @@
 // Minimum height for the dashboard.
 .dashboard-container {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .custom-mat-sidenav {
-    min-width: 20%;
-    border: none;
+  min-width: 20%;
+  border: none;
 }
 
-
 mat-list a {
-    text-decoration: none;
-    transition : all .2s;
+  text-decoration: none;
+  transition: all 0.2s;
 
-    &:hover {
-        background-color : darken(white, 10%);
-    }
+  &:hover {
+    background-color: darken(white, 10%);
+  }
 }
 
 span.menu-list-item {
-    padding-left : .8rem;
+  padding-left: 1.3rem;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 // HEADER COMPONENT
 .header {
-    background-image : linear-gradient(to right bottom, #1e88e5, #2196f3);
-    display : flex;
-    justify-content: space-between;
-    align-items: center;
+  background-image: linear-gradient(to right bottom, #1e88e5, #2196f3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    min-height : 50px;
-    &-logo {
-        color : white;
-    }
-
+  min-height: 50px;
+  &-logo {
+    color: white;
+  }
 }
 
 .sidenav-header {
-    background-image : linear-gradient(to right bottom, #2196f3, #1e88e5);
-    min-height: 50px;
+  background-image: linear-gradient(to right bottom, #2196f3, #1e88e5);
+  min-height: 50px;
 }
 
 .sidenav-header-logo {
-    height: 50px;
+  height: 50px;
 }
 
-
 .custom-button {
-    cursor : pointer; 
-    background-color: transparent; 
-    border : none; 
-    outline : none; 
-    color : white;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
 }
 
 .icon-rotated-180 {
-    transform : rotate(180deg);
-    transition : all .5s;
+  transform: rotate(180deg);
+  transition: all 0.5s;
 }
 
 .icon-rotated-0 {
-    transform : rotate(0);
-    transition : all .5s;
+  transform: rotate(0);
+  transition: all 0.5s;
 }

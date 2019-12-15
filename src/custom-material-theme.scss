@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 $my-blue: (
   50: #7fdddd,
@@ -29,13 +29,17 @@ $my-blue: (
     A100: white,
     A200: white,
     A400: white,
-    A700: white,
+    A700: white
   )
 );
 
 @include mat-core();
 $custom-theme-primary: mat-palette($my-blue, A100);
-$custom-theme-accent:mat-palette($my-blue, A200, A100, A400);
+$custom-theme-accent: mat-palette($my-blue, 400, A100, A400);
 $custom-theme-warn: mat-palette($mat-red);
-$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+$custom-theme: mat-light-theme(
+  $custom-theme-primary,
+  $custom-theme-accent,
+  $custom-theme-warn
+);
 @include angular-material-theme($custom-theme);

@@ -1,44 +1,67 @@
 <div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form [formGroup]="loginForm" (submit)="handleSubmit()" class="login100-form validate-form">
-					<h1 class="lead mb-3 text-center">
-                        Digital Architects Login
-                    </h1>
-								
-                    <mat-form-field class="w-100">
-                      <input [formControl]="username" matInput placeholder="Username">
-                      <mat-error *ngIf="username.touched && username.errors && username.errors.required"> Username is required</mat-error>
-                    </mat-form-field>			
-					
-                    <mat-form-field class="w-100">
-                      <input [formControl]="password" type="password" matInput placeholder="Password">
-                      <mat-error *ngIf="password.touched && password.errors && password.errors.required">Password is required</mat-error>
-                    </mat-form-field>
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <form
+        [formGroup]="loginForm"
+        (submit)="handleSubmit()"
+        class="login100-form validate-form"
+      >
+        <h1 class="lead mb-3 text-center">
+          Digital Architects Login
+        </h1>
 
-					<div class="flex-sb-m w-full pt-3 pb-2">
-                        <mat-checkbox>Remember me!</mat-checkbox>
+        <mat-form-field class="w-100">
+          <input [formControl]="username" matInput placeholder="Username" />
+          <mat-error
+            *ngIf="
+              username.touched && username.errors && username.errors.required
+            "
+          >
+            Username is required</mat-error
+          >
+        </mat-form-field>
 
-					</div>
-			
-                    <ng-container *ngIf="loadingState; else submitButton">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <mat-spinner></mat-spinner>
-                        </div>
-                    </ng-container>
+        <mat-form-field class="w-100">
+          <input
+            [formControl]="password"
+            type="password"
+            matInput
+            placeholder="Password"
+          />
+          <mat-error
+            *ngIf="
+              password.touched && password.errors && password.errors.required
+            "
+            >Password is required</mat-error
+          >
+        </mat-form-field>
 
-                    <ng-template #submitButton>
-                        <div style="background-color : transparent; border : none;" class="form-control">
-                            <button type="submit" class="w-100" mat-flat-button color="primary">Login</button>
-                        </div>
-                    </ng-template>
-					
-		
-				</form>
+        <div class="flex-sb-m w-full pt-3 pb-2">
+          <mat-checkbox>Remember me!</mat-checkbox>
+        </div>
 
-				<div class="login100-more" style="background-image: url('../../assets/images/login-page-4.png');">
-				</div>
-			</div>
-		</div>
-	</div>
-	
+        <ng-container *ngIf="loadingState; else submitButton">
+          <div class="d-flex justify-content-center align-items-center">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-container>
+
+        <ng-template #submitButton>
+          <div
+            style="background-color : transparent; border : none;"
+            class="form-control"
+          >
+            <button type="submit" class="w-100" mat-flat-button color="primary">
+              <span class="lead">Login</span>
+            </button>
+          </div>
+        </ng-template>
+      </form>
+
+      <div
+        class="login100-more"
+        style="background-image: url('../../assets/images/login-page-4.png');"
+      ></div>
+    </div>
+  </div>
+</div>

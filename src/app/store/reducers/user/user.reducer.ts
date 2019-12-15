@@ -2,50 +2,61 @@ import {
   START_LOGIN,
   SUCCESS_LOGIN,
   FAILED_LOGIN,
-  START_LOGIN_LOADING
-} from '../../types/user.types';
+  START_LOGIN_LOADING,
+  LOGOUT
+} from "../../types/user.types";
 
-import { UserActionTypes, SuccessLoginAction } from '../../actions/user.actions';
+import {
+  UserActionTypes,
+  SuccessLoginAction
+} from "../../actions/user.actions";
 
-const initialState : UserState = {
-    loggedIn : false,
-    token : null,
-    expirationDate : null,
-    username : null,
+const initialState: UserState = {
+  loggedIn: false,
+  token: null,
+  expirationDate: null,
+  username: null,
 
-    loginLoading : false
-}
-
-export interface UserState {
-    loggedIn : boolean;
-    token : string;
-    expirationDate : Date;
-    username : string;
-
-    loginLoading : boolean;
+  loginLoading: false
 };
 
-export const UserReducer = (state = initialState, action : UserActionTypes ) => {
+export interface UserState {
+  loggedIn: boolean;
+  token: string;
+  expirationDate: Date;
+  username: string;
 
-    switch(action.type) {
-        case START_LOGIN:
-            return {...state, loginLoading : true};
-        case SUCCESS_LOGIN:
-            return {
-              ...state,
-              loggedIn: true,
-              token: (<SuccessLoginAction>action).payload.token,
-              username: (<SuccessLoginAction>action).payload.username,
-              expirationDate: (<SuccessLoginAction>action).payload.expirationDate,
-              loginLoading: false
-            };
-        case FAILED_LOGIN:
-            return {
-              ...state,
-              loggedIn: false,
-              loginLoading: false
-            };
-        default:
-            return state;
-    }
+  loginLoading: boolean;
+}
+
+export const UserReducer = (state = initialState, action: UserActionTypes) => {
+  switch (action.type) {
+    case START_LOGIN:
+      return { ...state, loginLoading: true };
+    case SUCCESS_LOGIN:
+      return {
+        ...state,
+        loggedIn: true,
+        token: (action as SuccessLoginAction).payload.token,
+        username: (action as SuccessLoginAction).payload.username,
+        expirationDate: (action as SuccessLoginAction).payload.expirationDate,
+        loginLoading: false
+      };
+    case FAILED_LOGIN:
+      return {
+        ...state,
+        loggedIn: false,
+        loginLoading: false
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        loggedIn: false,
+        token: null,
+        expirationDate: null,
+        username: null
+      };
+    default:
+      return state;
+  }
 };
