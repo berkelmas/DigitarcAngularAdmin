@@ -1,36 +1,95 @@
-
 <mat-sidenav-container class="dashboard-container">
-  <mat-sidenav class="custom-mat-sidenav shadow" mode="side" opened>
-    
+  <mat-sidenav class="custom-mat-sidenav shadow">
     <!-- HERE COMES THE LOGO OF THE COMPANY AND SOME LOGGED IN USER INFORMATION. -->
     <div class="sidenav-header">
-      <img class="sidenav-header-logo pl-3" src="assets/images/admin-panel-logo.png" alt="">
+      <img
+        class="sidenav-header-logo pl-3"
+        src="assets/images/admin-panel-logo.png"
+        alt=""
+      />
     </div>
 
     <!-- HERE IS ALL THE SIDENAV CONTENT -->
     <mat-list>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-home fa-lg"></i> <span class="menu-list-item">Home</span> </a>
-      <a mat-list-item style="cursor: pointer;" (click)="secondItemState = !secondItemState"> <i class="fal fa-chart-line fa-lg"></i> <span class="menu-list-item"> Charts </span> <i [class.icon-rotated-180]="secondItemState" [class.icon-rotated-0]="!secondItemState" class="fal fa-chevron-down fa-lg ml-auto"></i> </a>
-        <a @toggleSubmenu *ngIf="secondItemState" class="ml-3" mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-chart-pie fa-lg"></i> <span class="menu-list-item"> Pie </span> </a>
-      
-      
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-database fa-lg"></i> <span class="menu-list-item"> Data </span> </a>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-link fa-lg"></i> <span class="menu-list-item"> Firm </span> </a>
-      <a mat-list-item [routerLink]="['/dashboard/home']"> <i class="fal fa-cogs fa-lg"></i> <span class="menu-list-item"> Settings </span> </a>    
-    </mat-list>
+      <a mat-list-item [routerLink]="['/dashboard/home']">
+        <i class="fal fa-home fa-lg"></i>
+        <span class="menu-list-item">Home</span>
+      </a>
 
+      <a
+        mat-list-item
+        style="cursor: pointer;"
+        (click)="secondItemState = !secondItemState"
+      >
+        <i class="fal fa-concierge-bell fa-lg"></i>
+        <span class="menu-list-item"> Reservation </span>
+        <i
+          [class.icon-rotated-180]="secondItemState"
+          [class.icon-rotated-0]="!secondItemState"
+          class="fal fa-chevron-down fa-lg ml-auto"
+        ></i>
+      </a>
+      <a
+        [routerLink]="['/dashboard/reservation/allreservations']"
+        @toggleSubmenu
+        *ngIf="secondItemState"
+        class="pl-4"
+        mat-list-item
+        [routerLink]="['/dashboard/home']"
+      >
+        <span class="menu-list-item"> All Reservations </span>
+      </a>
+
+      <a mat-list-item [routerLink]="['/dashboard/home']">
+        <i class="fal fa-calendar-check fa-lg"></i>
+        <span class="menu-list-item"> Check in </span>
+      </a>
+      <a
+        mat-list-item
+        style="cursor: pointer;"
+        (click)="roomOpenState = !roomOpenState"
+      >
+        <i class="fal fa-bed fa-lg"></i>
+        <span class="menu-list-item"> Rooms </span>
+        <i
+          [class.icon-rotated-180]="roomOpenState"
+          [class.icon-rotated-0]="!roomOpenState"
+          class="fal fa-chevron-down fa-lg ml-auto"
+        ></i>
+      </a>
+      <a
+        [routerLink]="['/dashboard/room/allrooms']"
+        @toggleSubmenu
+        *ngIf="roomOpenState"
+        class="pl-4"
+        mat-list-item
+      >
+        <span class="menu-list-item"> All Rooms </span>
+      </a>
+      <a
+        [routerLink]="['/dashboard/room/allrooms']"
+        @toggleSubmenu
+        *ngIf="roomOpenState"
+        class="pl-4"
+        mat-list-item
+      >
+        <span class="menu-list-item"> Add Room </span>
+      </a>
+      <a mat-list-item [routerLink]="['/dashboard/home']">
+        <i class="fal fa-cogs fa-lg"></i>
+        <span class="menu-list-item"> App Settings </span>
+      </a>
+    </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <app-header
+      (clicked)="matSidenav.toggle()"
+      [sidenavState]="matSidenav.opened"
+    ></app-header>
 
-    <app-header (clicked)="matSidenav.toggle()" [sidenavState]="matSidenav.opened"></app-header>
-    
     <!-- HERE IS ALL THE APP ROUTES... -->
     <div class="m-3 p-3">
       <router-outlet></router-outlet>
     </div>
-
   </mat-sidenav-content>
-
 </mat-sidenav-container>
-
-

@@ -8,6 +8,12 @@
   border: none;
 }
 
+@media only screen and (max-width: 560px) {
+  .custom-mat-sidenav {
+    min-width: 55%;
+  }
+}
+
 mat-list a {
   text-decoration: none;
   transition: all 0.2s;

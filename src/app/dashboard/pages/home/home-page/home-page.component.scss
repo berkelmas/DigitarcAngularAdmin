@@ -15,6 +15,12 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .info-box {
+    margin-bottom: 20px;
+  }
+}
+
 .info-number {
   color: white;
   font-family: Roboto;
@@ -22,10 +28,19 @@
   font-weight: 300;
 }
 
+@media only screen and (max-width: 1271px) {
+  .info-number {
+    font-size: 25px;
+  }
+  .info-title {
+    font-size: 12px;
+  }
+}
+
 .info-title {
   color: white;
   font-family: Roboto;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 300;
 }
 

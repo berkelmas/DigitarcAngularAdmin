@@ -1,0 +1,22 @@
+.card-header {
+  background-color: white;
+}
+
+.example-container {
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  // width: 800px;
+}
+
+td.mat-column-star {
+  width: 20px;
+  padding-right: 8px;
+}
+
+th.mat-column-price,
+td.mat-column-price {
+  padding-left: 20px;
+}

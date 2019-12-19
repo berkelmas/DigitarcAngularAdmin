@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, HostListener } from "@angular/core";
 
 // ANGULAR MATERIAL
 import { MatSidenav } from "@angular/material/sidenav";
@@ -18,8 +18,25 @@ import { trigger, style, transition, animate } from "@angular/animations";
 export class DashboardComponent implements OnInit {
   @ViewChild(MatSidenav, { static: true }) matSidenav: MatSidenav;
   secondItemState: boolean;
+  roomOpenState: boolean;
+
+  @HostListener("window:resize", ["$event"]) handleScroll(e) {
+    if (window.innerWidth > 500) {
+      this.matSidenav.mode = "side";
+    } else {
+      this.matSidenav.mode = "over";
+    }
+  }
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (window.innerWidth > 500) {
+      this.matSidenav.open().then(res => res);
+      this.matSidenav.mode = "side";
+    } else {
+      this.matSidenav.close().then(res => res);
+      this.matSidenav.mode = "over";
+    }
+  }
 }

@@ -1,0 +1,78 @@
+<div class="card">
+  <div
+    class="card-header d-flex align-items-center flex-md-row justify-content-between"
+  >
+    <p
+      style="font-family: Roboto; font-weight: 300; font-size: 1.35rem;"
+      class="mb-0 lead"
+    >
+      All Rooms
+    </p>
+
+    <button
+      style="outline: none; background-color: #00A699; box-shadow: 0px 0px 10px 0px #00A699;"
+      class="m-1"
+      mat-flat-button
+      color="primary"
+    >
+      <i class="fal fa-plus fa-lg"></i>
+      <span
+        style="font-family: Roboto; font-weight: 300; font-size: 1rem; color: white"
+        class="pl-2"
+        >Add New</span
+      >
+    </button>
+  </div>
+  <div class="card-body p-4">
+    <div class="example-container mat-elevation-z8">
+      <table [style.width]="'100%'" mat-table [dataSource]="dataSource">
+        <!-- Room Name Column -->
+        <ng-container matColumnDef="roomName" sticky>
+          <th mat-header-cell *matHeaderCellDef>Room Name</th>
+          <td mat-cell *matCellDef="let room">
+            {{ room.roomName }}
+          </td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="roomPrice">
+          <th mat-header-cell *matHeaderCellDef>Room Price</th>
+          <td mat-cell *matCellDef="let room">
+            {{ room.roomPrice }}
+          </td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="editAction">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td style="text-align:end;" mat-cell *matCellDef="let room">
+            <button
+              style="outline: none; background-color: #00A699;"
+              class="m-1"
+              mat-flat-button
+              color="primary"
+            >
+              <i class="fal fa-edit fa-lg"></i>
+            </button>
+            <button
+              class="m-1"
+              style="outline: none"
+              mat-flat-button
+              color="primary"
+            >
+              <i class="fal fa-info-square fa-lg"></i>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[10, 20]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

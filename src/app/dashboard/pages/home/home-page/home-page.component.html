@@ -4,7 +4,7 @@
     <div class="info-box info-box-blue">
       <div class="d-flex flex-column">
         <span class="info-number">28</span>
-        <span class="info-title">New Task</span>
+        <span class="info-title">Check In</span>
       </div>
       <i class="fal fa-tasks fa-4x info-icon"></i>
     </div>
@@ -12,8 +12,8 @@
   <div class="col-md-4">
     <div class="info-box info-box-teal">
       <div class="d-flex flex-column">
-        <span class="info-number">28</span>
-        <span class="info-title">New User</span>
+        <span class="info-number">35</span>
+        <span class="info-title">Reservation</span>
       </div>
       <i class="fal fa-user fa-4x info-icon"></i>
     </div>
@@ -21,8 +21,8 @@
   <div class="col-md-4">
     <div class="info-box info-box-cyan">
       <div class="d-flex flex-column">
-        <span class="info-number">28</span>
-        <span class="info-title">New Work</span>
+        <span class="info-number">40</span>
+        <span class="info-title">Contact Request</span>
       </div>
       <i class="fal fa-briefcase fa-4x info-icon"></i>
     </div>
@@ -30,37 +30,52 @@
 </div>
 
 <!-- CHARTS PART -->
+
 <div class="row mt-5">
   <div class="col-lg-6 col-md-12">
-    <canvas
-      baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [plugins]="barChartPlugins"
-      [legend]="barChartLegend"
-      [chartType]="barChartType"
-      [colors]="[
-        { backgroundColor: '#1e88e5' },
-        { backgroundColor: '#00bcd4' }
-      ]"
-    >
-    </canvas>
+    <div class="card shadow">
+      <div class="card-header">
+        <p class="mb-0 lead">Check-in Graph</p>
+      </div>
+      <div class="card-body">
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="[
+            { backgroundColor: '#1e88e5' },
+            { backgroundColor: '#00bcd4' }
+          ]"
+        >
+        </canvas>
+      </div>
+    </div>
   </div>
 
   <div class="col-lg-6 col-md-12">
-    <canvas
-      baseChart
-      [data]="doughnutChartData"
-      [labels]="doughnutChartLabels"
-      [chartType]="doughnutChartType"
-      [colors]="[
-        { backgroundColor: '#81d4fa' },
-        { backgroundColor: '#80deea' },
-        { backgroundColor: '#80cbc4' }
-      ]"
-    >
-    </canvas>
+    <div class="card shadow">
+      <div class="card-header">
+        <p class="mb-0 lead">Reservations</p>
+      </div>
+      <div class="card-body">
+        <canvas
+          baseChart
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          [colors]="[
+            { backgroundColor: '#81d4fa' },
+            { backgroundColor: '#80deea' },
+            { backgroundColor: '#80cbc4' }
+          ]"
+        >
+        </canvas>
+      </div>
+    </div>
   </div>
 </div>
 
